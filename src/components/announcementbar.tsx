@@ -15,7 +15,7 @@ const English_US_SVG = (
     <path
       d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0"
       stroke="#fff"
-      stroke-width="300"
+      strokeWidth="300"
     />
     <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
     <g fill="#fff">
@@ -66,7 +66,7 @@ const Italiano_SVG = (
     id="flag-icon-css-it"
     viewBox="0 0 512 512"
   >
-    <g fill-rule="evenodd" stroke-width="1pt">
+    <g fillRule="evenodd" strokeWidth="1pt">
       <path fill="#fff" d="M0 0h512v512H0z" />
       <path fill="#009246" d="M0 0h170.7v512H0z" />
       <path fill="#ce2b37" d="M341.3 0H512v512H341.3z" />
@@ -163,37 +163,42 @@ export default function Announcementbar() {
   }, []);
 
   return (
-    <header className="bg-white sm:sticky top-0 font font-small text-black text-sm items-center">
-      <div className="container mx-auto flex p-2 items-center">
-        <div className="mx-auto">
-          <a href="#">New Announcements</a>
-        </div>
-        <div className="flex">
-          <div ref={locationdropdownRef}>
-            <button
-              type="button"
-              data-dropdown-toggle="location-dropdown-menu"
-              className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
-              onClick={() => setIsLocationDropdownOpen(!isLocationDropdownOpen)}
-            >
-              <FontAwesomeIcon
-                icon={faLocationDot}
-                className="w-3.5 h-3 p-1 ml-1"
-              />
-              {currentLocation}
-            </button>
-          </div>
+    <header className="bg-white font h-12 font-small text-black text-sm items-center">
+      <div className="pb-1 border-b border-black">
+        <div className="container mx-auto pt-2 mb-0 flex items-center justify-between">
+          <div className="w-96">&nbsp;</div>
+          <div className="mx-auto">New Announcements</div>
+          <div className="flex w-96 justify-end">
+            <div ref={locationdropdownRef}>
+              <button
+                type="button"
+                data-dropdown-toggle="location-dropdown-menu"
+                className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+                onClick={() =>
+                  setIsLocationDropdownOpen(!isLocationDropdownOpen)
+                }
+              >
+                <FontAwesomeIcon
+                  icon={faLocationDot}
+                  className="w-3.5 h-3 p-1 ml-1"
+                />
+                {currentLocation}
+              </button>
+            </div>
 
-          <div ref={languagedropdownRef}>
-            <button
-              type="button"
-              data-dropdown-toggle="language-dropdown-menu"
-              className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
-              onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
-            >
-              {currentSVG}
-              {currentLanguage}
-            </button>
+            <div ref={languagedropdownRef}>
+              <button
+                type="button"
+                data-dropdown-toggle="language-dropdown-menu"
+                className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+                onClick={() =>
+                  setIsLanguageDropdownOpen(!isLanguageDropdownOpen)
+                }
+              >
+                {currentSVG}
+                {currentLanguage}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -201,129 +206,118 @@ export default function Announcementbar() {
       <div
         className={`${
           isLocationDropdownOpen ? "block" : "hidden"
-        } container mx-auto flex items-center justify-end z-50 my-4 bg-white divide-y divide-gray-100 rounded-lg`}
+        }  relative z-50 h-14  flex items-center bg-white divide-y divide-gray-100`}
         id="location-dropdown-menu"
       >
-        <ul
-          className="font-medium"
-          role="none"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-          }}
-        >
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              onClick={() => handleLocationClick("Worldwide")}
-            >
-              <div className="inline-flex items-center">Worldwide</div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              onClick={() => handleLocationClick("France")}
-            >
-              <div className="inline-flex items-center">France</div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              onClick={() => handleLocationClick("United Kingdom")}
-            >
-              <div className="inline-flex items-center">United Kingdom</div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              onClick={() => handleLocationClick("United States")}
-            >
-              <div className="inline-flex items-center">United States</div>
-            </a>
-          </li>
-        </ul>
+        <div className="container mx-auto justify-end flex">
+          <ul className="font-medium flex flex-row flex-wrap" role="none">
+            <li>
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                role="menuitem"
+                onClick={() => handleLocationClick("Worldwide")}
+              >
+                <div className="inline-flex items-center">Worldwide</div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                role="menuitem"
+                onClick={() => handleLocationClick("France")}
+              >
+                <div className="inline-flex items-center">France</div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                role="menuitem"
+                onClick={() => handleLocationClick("United Kingdom")}
+              >
+                <div className="inline-flex items-center">United Kingdom</div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                role="menuitem"
+                onClick={() => handleLocationClick("United States")}
+              >
+                <div className="inline-flex items-center">United States</div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-
       <div
         className={`${
           isLanguageDropdownOpen ? "block" : "hidden"
-        } container mx-auto flex items-center justify-end z-50 my-4 bg-white divide-y divide-gray-100 rounded-lg`}
+        }  relative z-50 h-14  flex items-center bg-white divide-y divide-gray-100`}
         id="language-dropdown-menu"
       >
-        <ul
-          className="font-medium"
-          role="none"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-          }}
-        >
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              onClick={() => handleLanguageClick("English", English_US_SVG)}
-            >
-              <div className="inline-flex items-center">
-                {English_US_SVG}
-                English (US)
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              onClick={() => handleLanguageClick("Deutsch", Deutsch_SVG)}
-            >
-              <div className="inline-flex items-center">
-                {Deutsch_SVG}
-                Deutsch
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              onClick={() => handleLanguageClick("Italiano", Italiano_SVG)}
-            >
-              <div className="inline-flex items-center">
-                {Italiano_SVG}
-                Italiano
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              onClick={() => handleLanguageClick("中文 (繁體)", 中文_繁體_SVG)}
-            >
-              <div className="inline-flex items-center">
-                {中文_繁體_SVG}
-                中文 (繁體)
-              </div>
-            </a>
-          </li>
-        </ul>
+        <div className="container mx-auto justify-end flex">
+          <ul className="font-medium flex flex-row flex-wrap" role="none">
+            <li>
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                role="menuitem"
+                onClick={() => handleLanguageClick("English", English_US_SVG)}
+              >
+                <div className="inline-flex items-center">
+                  {English_US_SVG}
+                  English (US)
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                role="menuitem"
+                onClick={() => handleLanguageClick("Deutsch", Deutsch_SVG)}
+              >
+                <div className="inline-flex items-center">
+                  {Deutsch_SVG}
+                  Deutsch
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                role="menuitem"
+                onClick={() => handleLanguageClick("Italiano", Italiano_SVG)}
+              >
+                <div className="inline-flex items-center">
+                  {Italiano_SVG}
+                  Italiano
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                role="menuitem"
+                onClick={() =>
+                  handleLanguageClick("中文 (繁體)", 中文_繁體_SVG)
+                }
+              >
+                <div className="inline-flex items-center">
+                  {中文_繁體_SVG}
+                  中文 (繁體)
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
   );

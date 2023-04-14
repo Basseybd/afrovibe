@@ -11,8 +11,8 @@ export default function Navbar() {
     setSearchInputValue("");
   }
   return (
-    <header className="bg-black absolute sticky top-0 z-0">
-      <div className="container mx-auto flex flex-wrap p-2.5 flex-col md:flex-row items-center text-white">
+    <header className="sticky bg-black top-0 z-0">
+      <div className="container mx-auto h-10 flex flex-wrap p-2.5 flex-col md:flex-row items-center text-white">
         <div className="title-font font-medium">
           <a href="#" className="ml-3 text-xl">
             AfroVibe
@@ -44,7 +44,7 @@ export default function Navbar() {
           />
           <label
             htmlFor="floating_outlined"
-            className="absolute text-sm bg-black duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+            className="absolute text-sm bg-black duration-300 transform -translate-y-4 scale-75 top-2 z-0 origin-[0] px-2 peer-focus:px-2 peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
           >
             <FontAwesomeIcon icon={faMagnifyingGlass} className="mr-2" />
             Search
