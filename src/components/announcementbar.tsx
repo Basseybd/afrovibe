@@ -121,35 +121,46 @@ const 中文_繁體_SVG = (
 );
 
 export default function Announcementbar() {
-  const [currentLanguage, setCurrentLanguage] = useState("English US");
+  const [currentLocation, setCurrentLocation] = useState("Worldwide");
+  const [currentLanguage, setCurrentLanguage] = useState("English");
   const [currentSVG, setCurrentSVG] = useState(English_US_SVG);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, [dropdownRef]);
+  const [isLocationDropdownOpen, setIsLocationDropdownOpen] = useState(false);
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const locationdropdownRef = useRef<HTMLDivElement>(null);
+  const languagedropdownRef = useRef<HTMLDivElement>(null);
 
   const handleLanguageClick = (language: string, svg: JSX.Element) => {
     setCurrentSVG(svg);
     setCurrentLanguage(language);
-    setIsDropdownOpen(false);
+    setIsLanguageDropdownOpen(false);
   };
 
-  const handleDropdownClick = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const handleLocationClick = (location: string) => {
+    setCurrentLocation(location);
+    setIsLocationDropdownOpen(false);
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      locationdropdownRef.current &&
+      !locationdropdownRef.current.contains(event.target as Node)
+    ) {
+      setIsLocationDropdownOpen(false);
+    }
+    if (
+      languagedropdownRef.current &&
+      !languagedropdownRef.current.contains(event.target as Node)
+    ) {
+      setIsLanguageDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="bg-white sm:sticky top-0 font font-small text-black text-sm items-center">
@@ -158,29 +169,97 @@ export default function Announcementbar() {
           <a href="#">New Announcements</a>
         </div>
         <div className="flex">
-          <a href="#" className="flex mr-5 ">
-            <FontAwesomeIcon
-              icon={faLocationDot}
-              className="w-3.5 h-3 p-1 ml-1"
-            />
-            Worldwide
-          </a>
-          <button
-            type="button"
-            data-dropdown-toggle="language-dropdown-menu"
-            className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100 e"
-            onClick={handleDropdownClick}
-          >
-            {currentSVG}
-            {currentLanguage}
-          </button>
+          <div ref={locationdropdownRef}>
+            <button
+              type="button"
+              data-dropdown-toggle="location-dropdown-menu"
+              className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+              onClick={() => setIsLocationDropdownOpen(!isLocationDropdownOpen)}
+            >
+              <FontAwesomeIcon
+                icon={faLocationDot}
+                className="w-3.5 h-3 p-1 ml-1"
+              />
+              {currentLocation}
+            </button>
+          </div>
+
+          <div ref={languagedropdownRef}>
+            <button
+              type="button"
+              data-dropdown-toggle="language-dropdown-menu"
+              className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+              onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+            >
+              {currentSVG}
+              {currentLanguage}
+            </button>
+          </div>
         </div>
       </div>
       {/* <!-- Dropdown -->  */}
       <div
         className={`${
-          isDropdownOpen ? "block" : "hidden"
-        } z-50 my-4 bg-white divide-y divide-gray-100 rounded-lg shadow`}
+          isLocationDropdownOpen ? "block" : "hidden"
+        } container mx-auto flex items-center justify-end z-50 my-4 bg-white divide-y divide-gray-100 rounded-lg`}
+        id="location-dropdown-menu"
+      >
+        <ul
+          className="font-medium"
+          role="none"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+          }}
+        >
+          <li>
+            <a
+              href="#"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+              onClick={() => handleLocationClick("Worldwide")}
+            >
+              <div className="inline-flex items-center">Worldwide</div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+              onClick={() => handleLocationClick("France")}
+            >
+              <div className="inline-flex items-center">France</div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+              onClick={() => handleLocationClick("United Kingdom")}
+            >
+              <div className="inline-flex items-center">United Kingdom</div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+              onClick={() => handleLocationClick("United States")}
+            >
+              <div className="inline-flex items-center">United States</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        className={`${
+          isLanguageDropdownOpen ? "block" : "hidden"
+        } container mx-auto flex items-center justify-end z-50 my-4 bg-white divide-y divide-gray-100 rounded-lg`}
         id="language-dropdown-menu"
       >
         <ul

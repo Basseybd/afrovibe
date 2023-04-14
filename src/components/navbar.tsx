@@ -11,7 +11,7 @@ export default function Navbar() {
     setSearchInputValue("");
   }
   return (
-    <header className="bg-black sticky top-0 z-50">
+    <header className="bg-black absolute sticky top-0 z-0">
       <div className="container mx-auto flex flex-wrap p-2.5 flex-col md:flex-row items-center text-white">
         <div className="title-font font-medium">
           <a href="#" className="ml-3 text-xl">
@@ -36,7 +36,7 @@ export default function Navbar() {
           <input
             type="search"
             id="floating_outlined"
-            className="block px-2.5 pb-0 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
+            className="block px-2.5 pb-0 pt-4 w-full text-sm text-white items-center bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
             placeholder=" "
             value={searchInputValue}
             onBlur={handleSearchInputBlur}
