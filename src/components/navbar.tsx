@@ -40,12 +40,9 @@ export default function Navbar() {
             Search
           </label>
         </div>
-        <a
-          href="#"
-          className="inline-block outline border-white rounded-md py-1 px-3 mt-4 md:mt-0 transition ease-in-out duration-700 bg-black text-white  text-sm font-medium hover:bg-white hover:text-black"
-        >
+        <button className="inline-block outline border-white rounded-md py-1 px-3 mt-4 md:mt-0 transition ease-in-out duration-700 bg-black text-white  text-sm font-medium hover:bg-white hover:text-black">
           Join the movement
-        </a>
+        </button>
         <button className="pr-3 pl-6 text-slate-600 hover:text-white">
           <FontAwesomeIcon icon={faUserLarge} />
         </button>

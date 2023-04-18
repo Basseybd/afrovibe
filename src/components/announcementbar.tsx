@@ -212,44 +212,40 @@ export default function Announcementbar() {
         <div className="container mx-auto justify-end flex">
           <ul className="font-medium flex flex-row flex-wrap" role="none">
             <li>
-              <a
-                href="#"
+              <button
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
                 onClick={() => handleLocationClick("Worldwide")}
               >
                 <div className="inline-flex items-center">Worldwide</div>
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
+              <button
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
                 onClick={() => handleLocationClick("France")}
               >
                 <div className="inline-flex items-center">France</div>
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
+              <button
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
                 onClick={() => handleLocationClick("United Kingdom")}
               >
                 <div className="inline-flex items-center">United Kingdom</div>
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
+              <button
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
                 onClick={() => handleLocationClick("United States")}
               >
                 <div className="inline-flex items-center">United States</div>
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -263,8 +259,7 @@ export default function Announcementbar() {
         <div className="container mx-auto justify-end flex">
           <ul className="font-medium flex flex-row flex-wrap" role="none">
             <li>
-              <a
-                href="#"
+              <button
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
                 onClick={() => handleLanguageClick("English", English_US_SVG)}
@@ -273,11 +268,10 @@ export default function Announcementbar() {
                   {English_US_SVG}
                   English (US)
                 </div>
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
+              <button
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
                 onClick={() => handleLanguageClick("Deutsch", Deutsch_SVG)}
@@ -286,11 +280,10 @@ export default function Announcementbar() {
                   {Deutsch_SVG}
                   Deutsch
                 </div>
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
+              <button
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
                 onClick={() => handleLanguageClick("Italiano", Italiano_SVG)}
@@ -299,11 +292,10 @@ export default function Announcementbar() {
                   {Italiano_SVG}
                   Italiano
                 </div>
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
+              <button
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
                 onClick={() =>
@@ -314,7 +306,7 @@ export default function Announcementbar() {
                   {中文_繁體_SVG}
                   中文 (繁體)
                 </div>
-              </a>
+              </button>
             </li>
           </ul>
         </div>
