@@ -1,13 +1,12 @@
-import Announcementbar from "./components/announcementbar";
-import Navbar from "./components/navbar";
-import Newcollaboration from "./components/newcollaboration";
-
+import Announcementbar from "./components/sections/announcementBar";
+import Navbar from "./components/sections/navBar";
+import Newcollaboration from "./components/sections/newcollaboration";
 
 function App() {
   return (
     <div className="">
       <Announcementbar />
-      <Navbar  />
+      <Navbar />
       <Newcollaboration />
     </div>
   );

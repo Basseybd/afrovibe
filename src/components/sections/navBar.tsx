@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUserLarge } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import ReverseButton from "../reuseables/button";
 
 export default function Navbar() {
   const [searchInputValue, setSearchInputValue] = useState("");
@@ -17,10 +18,10 @@ export default function Navbar() {
           <div className="ml-3 text-xl">AfroVibe</div>
         </div>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-whtie-700 flex flex-wrap items-center text-base justify-center">
-          <button className="pr-5 hover:underline">Men</button>
-          <button className="pr-5 hover:underline">Women</button>
-          <button className="pr-5 hover:underline">Accessories</button>
-          <button className="pr-5 hover:underline">Collections</button>
+          <ReverseButton name="Men" action="" reverse={false} />
+          <ReverseButton name="Women" action="" reverse={false} />
+          <ReverseButton name="Accessories" action="" reverse={false} />
+          <ReverseButton name="Collections" action="" reverse={false} />
         </nav>
         <div className="relative mr-5">
           <input
@@ -40,9 +41,7 @@ export default function Navbar() {
             Search
           </label>
         </div>
-        <button className="inline-block outline border-white rounded-md py-1 px-3 mt-4 md:mt-0 transition ease-in-out duration-700 bg-black text-white  text-sm font-medium hover:bg-white hover:text-black">
-          Join the movement
-        </button>
+        <ReverseButton name="Join the movement" action="" reverse={true} />
         <button className="pr-3 pl-6 text-slate-600 hover:text-white">
           <FontAwesomeIcon icon={faUserLarge} />
         </button>
