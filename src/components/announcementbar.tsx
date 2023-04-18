@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+import DefaultCarousel from "./carousel"
 
 const English_US_SVG = (
   <svg
@@ -163,17 +163,17 @@ export default function Announcementbar() {
   }, []);
 
   return (
-    <header className="bg-white font h-12 font-small text-black text-sm items-center">
-      <div className="pb-1 border-b border-black">
-        <div className="container mx-auto pt-2 mb-0 flex items-center justify-between">
+    <header className="bg-white font h-9 font-small text-black text-sm items-center border-b border-black">
+      <div className="border-b border-black">
+        <div className="container h-9 mx-auto mb-0 flex items-center justify-between">
           <div className="w-96">&nbsp;</div>
-          <div className="mx-auto">New Announcements</div>
+          <DefaultCarousel />
           <div className="flex w-96 justify-end">
             <div ref={locationdropdownRef}>
               <button
                 type="button"
                 data-dropdown-toggle="location-dropdown-menu"
-                className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+                className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
                 onClick={() =>
                   setIsLocationDropdownOpen(!isLocationDropdownOpen)
                 }
@@ -190,7 +190,7 @@ export default function Announcementbar() {
               <button
                 type="button"
                 data-dropdown-toggle="language-dropdown-menu"
-                className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+                className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
                 onClick={() =>
                   setIsLanguageDropdownOpen(!isLanguageDropdownOpen)
                 }
