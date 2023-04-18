@@ -18,9 +18,6 @@ const Carousel = () => {
     return () => clearInterval(intervalId);
   }, [activeIndex, currentWord]);
 
-  const prevIndex = (activeIndex - 1 + words.length) % words.length;
-  const nextIndex = (activeIndex + 1) % words.length;
-
   return (
     <div className="relative h-9 flex justify-center items-center text-black font-extrabold">
       {words.map((word, index) => (
@@ -44,4 +41,3 @@ const Carousel = () => {
 };
 
 export default Carousel;
-
