@@ -14,23 +14,13 @@ export default function Navbar() {
     <header className="sticky bg-black top-0 z-0">
       <div className="container mx-auto h-10 flex flex-wrap p-2.5 flex-col md:flex-row items-center text-white">
         <div className="title-font font-medium">
-          <a href="#" className="ml-3 text-xl">
-            AfroVibe
-          </a>
+          <div className="ml-3 text-xl">AfroVibe</div>
         </div>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-whtie-700 flex flex-wrap items-center text-base justify-center">
-          <a href="#" className="pr-5 hover:underline">
-            Men
-          </a>
-          <a href="#" className="pr-5 hover:underline">
-            Women
-          </a>
-          <a href="#" className="pr-5 hover:underline">
-            Accessories
-          </a>
-          <a href="#" className="pr-5 hover:underline">
-            Collections
-          </a>
+          <button className="pr-5 hover:underline">Men</button>
+          <button className="pr-5 hover:underline">Women</button>
+          <button className="pr-5 hover:underline">Accessories</button>
+          <button className="pr-5 hover:underline">Collections</button>
         </nav>
         <div className="relative mr-5">
           <input
@@ -56,12 +46,12 @@ export default function Navbar() {
         >
           Join the movement
         </a>
-        <a href="#" className="pr-3 pl-6 text-slate-600 hover:text-white">
+        <button className="pr-3 pl-6 text-slate-600 hover:text-white">
           <FontAwesomeIcon icon={faUserLarge} />
-        </a>
-        <a href="#" className="px-3 text-slate-600 hover:text-white">
+        </button>
+        <button className="px-3 text-slate-600 hover:text-white">
           <FontAwesomeIcon icon={faCartShopping} />
-        </a>
+        </button>
       </div>
     </header>
   );
