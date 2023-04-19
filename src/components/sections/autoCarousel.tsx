@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
+import { announcements } from "../../data/otherdata";
 
-const words = ["WATCH", "THIS", "SPACE"];
 
-const Carousel = () => {
+const AutoCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [currentWord, setCurrentWord] = useState(words[0]);
+  const [currentWord, setCurrentWord] = useState(announcements[0]);
   const [previousWord, setPreviousWord] = useState("");
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const nextIndex = (activeIndex + 1) % words.length;
+      const nextIndex = (activeIndex + 1) % announcements.length;
       setPreviousWord(currentWord);
-      setCurrentWord(words[nextIndex]);
+      setCurrentWord(announcements[nextIndex]);
       setActiveIndex(nextIndex);
     }, 1000);
 
@@ -20,24 +20,24 @@ const Carousel = () => {
 
   return (
     <div className="relative h-9 flex justify-center items-center text-black font-extrabold">
-      {words.map((word, index) => (
+      {announcements.map((announcement, index) => (
         <div
           key={index}
           className={`absolute inset-x-0 flex items-center justify-center -top-6 p-1 transform transition-transform duration-1000  ${
-            word === currentWord
+            announcement === currentWord
               ? "translate-y-full"
-              : word === previousWord
+              : announcement === previousWord
               ? "-translate-y-full"
               : index === activeIndex
               ? "translate-y-full"
               : ""
           } `}
         >
-          {word}
+          {announcement}
         </div>
       ))}
     </div>
   );
 };
 
-export default Carousel;
+export default AutoCarousel;

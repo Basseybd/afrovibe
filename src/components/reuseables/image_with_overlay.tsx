@@ -6,19 +6,19 @@ interface ImageWithOverlayProps {
   buttonText: string;
   heading: string;
   subheading: string;
-  height: string;
-  width: string;
+  extraStyling?: string;
+  specialStyling?: string;
 }
 
 export default function ImageWithOverlay(props: ImageWithOverlayProps) {
   return (
     <div className="relative">
-      <div className="aboslute -mt-16 z-0">
+      <div className={`aboslute z-0 ${props.specialStyling}`}>
         <div className="container mx-auto">
           <img
             src={props.imagePath}
             alt={props.imageDescription}
-            className="w-full h-auto"
+            className={` ${props.extraStyling}`}
           />
           <div className="absolute bottom-0 z-10 text-white pb-4 pl-4">
             <div className="text-base font-normal">{props.subheading}</div>
@@ -32,7 +32,6 @@ export default function ImageWithOverlay(props: ImageWithOverlayProps) {
               hieght="h-12"
               width="w-3/4"
               padding="p-5"
-             
             />
           </div>
         </div>

@@ -5,6 +5,13 @@ import {
   中文_繁體_SVG,
 } from "./svg";
 
+import afroVibeCheck from "../assests/afro_vibe_check.png"
+import doYouPass from "../assests/do_you_pass.png"
+import watchThisSpace from "../assests/watch_this_space.png";
+import iPassedTheVibeCheck from "../assests/i_passed_the_vibe_check.png";
+
+
+
 export const words = ["WATCH", "THIS", "SPACE"];
 
 export const languages = [
@@ -19,4 +26,63 @@ export const locations = [
   { name: "France" },
   { name: "United Kingdom" },
   { name: "United States" },
+];
+
+export const announcements = ["WATCH", "THIS", "SPACE"];
+
+export const featuredItems = [
+  {
+    name: "afroVibeCheck",
+    imagePath: afroVibeCheck,
+    altimagePath: doYouPass,
+    imageDescription: "afroVibeCheck",
+  },
+  {
+    name: "watchThisSpace",
+    imagePath: watchThisSpace,
+    altimagePath: iPassedTheVibeCheck,
+    imageDescription: "watchThisSpace",
+  },
+  {
+    name: "afroVibeCheck",
+    imagePath: afroVibeCheck,
+    altimagePath: doYouPass,
+    imageDescription: "afroVibeCheck",
+  },
+  {
+    name: "afroVibeCheck",
+    imagePath: afroVibeCheck,
+    altimagePath: doYouPass,
+    imageDescription: "afroVibeCheck",
+  },
+  {
+    name: "watchThisSpace",
+    imagePath: watchThisSpace,
+    altimagePath: iPassedTheVibeCheck,
+    imageDescription: "watchThisSpace",
+  },
+  {
+    name: "afroVibeCheck",
+    imagePath: afroVibeCheck,
+    altimagePath: doYouPass,
+    imageDescription: "afroVibeCheck",
+  },
+  {
+    name: "afroVibeCheck",
+    imagePath: afroVibeCheck,
+    altimagePath: doYouPass,
+    imageDescription: "afroVibeCheck",
+  },
+  {
+    name: "watchThisSpace",
+    imagePath: watchThisSpace,
+    altimagePath: iPassedTheVibeCheck,
+    imageDescription: "watchThisSpace",
+  },
+  {
+    name: "afroVibeCheck",
+    imagePath: afroVibeCheck,
+    altimagePath: doYouPass,
+    imageDescription: "afroVibeCheck",
+  },
 ];

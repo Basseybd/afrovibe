@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import DefaultCarousel from "../reuseables/carousel";
+import AutoCarousel from "./autoCarousel";
 import { languages, locations } from "../../data/otherdata";
-import Dropdown from "../reuseables/dropdown";
+import FullScreenDropdown from "../reuseables/fullScreenDropdown";
 
 export default function Announcementbar() {
   const [currentLocation, setCurrentLocation] = useState(locations[0].name);
@@ -53,46 +53,42 @@ export default function Announcementbar() {
 
   return (
     <header className="bg-white h-9 font-small text-black text-sm items-center">
-        <div className="container h-9 mx-auto flex items-center justify-between">
-          <div className="w-96">&nbsp;</div>
-          <DefaultCarousel />
-          <div className="flex w-96 justify-end">
-            <div ref={locationdropdownRef}>
-              <button
-                type="button"
-                className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
-                onClick={() =>
-                  setIsLocationDropdownOpen(!isLocationDropdownOpen)
-                }
-              >
-                <FontAwesomeIcon
-                  icon={faLocationDot}
-                  className="w-3.5 h-3 p-1 ml-1"
-                />
-                {currentLocation}
-              </button>
-            </div>
-
-            <div ref={languagedropdownRef}>
-              <button
-                type="button"
-                className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
-                onClick={() =>
-                  setIsLanguageDropdownOpen(!isLanguageDropdownOpen)
-                }
-              >
-                {currentSVG}
-                {currentLanguage}
-              </button>
-            </div>
+      <div className="container h-9 mx-auto flex items-center justify-between">
+        <div className="w-96">&nbsp;</div>
+        <AutoCarousel />
+        <div className="flex w-96 justify-end">
+          <div ref={locationdropdownRef}>
+            <button
+              type="button"
+              className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+              onClick={() => setIsLocationDropdownOpen(!isLocationDropdownOpen)}
+            >
+              <FontAwesomeIcon
+                icon={faLocationDot}
+                className="w-3.5 h-3 p-1 ml-1"
+              />
+              {currentLocation}
+            </button>
           </div>
+
+          <div ref={languagedropdownRef}>
+            <button
+              type="button"
+              className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+              onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+            >
+              {currentSVG}
+              {currentLanguage}
+            </button>
+          </div>
+        </div>
       </div>
-      <Dropdown
+      <FullScreenDropdown
         isDropdownOpen={isLocationDropdownOpen}
         array={locations}
         handleClick={handleClick}
       />
-      <Dropdown
+      <FullScreenDropdown
         isDropdownOpen={isLanguageDropdownOpen}
         array={languages}
         handleClick={handleClick}

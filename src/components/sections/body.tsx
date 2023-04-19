@@ -1,6 +1,8 @@
 import ImageWithOverlay from "../reuseables/image_with_overlay";
-import Newcollaboration from "./newcollaboration";
-import edem_model_1 from "../../assests/edem_model_1.jpeg"
+import edem_model_1 from "../../assests/edem_model_1.jpeg";
+import { featuredItems } from "../../data/otherdata";
+import ManualCarousel from "../reuseables/manualCarousel";
+import Collections from "./collections";
 
 export default function body() {
   return (
@@ -11,10 +13,11 @@ export default function body() {
         buttonText="Shop Now"
         heading="SS23 Highlights"
         subheading="Featured Collection"
-        height="h-full"
-        width="w-full"
+        specialStyling="-mt-16"
       />
-      <Newcollaboration />
+      <ManualCarousel images={featuredItems} />
+      <Collections />
+
     </div>
   );
 }
