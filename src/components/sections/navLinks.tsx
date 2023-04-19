@@ -7,7 +7,9 @@ export default function NavLinks() {
       <>
         {navHeaders.map((header) => (
           <div className="flex cursor-pointer h-16 items-center group">
-            <div className="pr-5 hover:underline">{header.name}</div>
+            <div className="flex justify-center items-center pr-5 h-full hover:border-b hover:border-black">
+              {header.name}
+            </div>
             {header.submenu && (
               <div className="absolute top-16 left-4 w-full hidden bg-white group-hover:block group-hover:md:block hover:md:block">
                 <div className="container mx-auto">
@@ -24,7 +26,7 @@ export default function NavLinks() {
                                 <Route
                                   path="/"
                                   element={
-                                    <div className="hover:text-primary hover:underline">
+                                    <div className="flex items-center pr-5 h-full hover:border-b hover:border-black">
                                       {slink.name}
                                     </div>
                                   }

@@ -22,13 +22,17 @@ export default function ImageWithOverlay(props: ImageWithOverlayProps) {
           />
           <div className="absolute bottom-0 z-10 text-white pb-4 pl-4">
             <div className="text-base font-normal">{props.subheading}</div>
-            <div className="text-3xl font-bold pb-1">{props.heading}</div>
+            <div className="text-3xl font-bold pb-2">{props.heading}</div>
             <Button
               name={props.buttonText}
               action=""
               reverse={true}
               bgColor="bg-white"
-              textColor='text-black'
+              textColor="text-black"
+              hieght="h-12"
+              width="w-3/4"
+              padding="p-5"
+             
             />
           </div>
         </div>
