@@ -47,9 +47,9 @@ export default function Announcementbar() {
   }, []);
 
   return (
-    <header className="bg-white font h-9 font-small text-black text-sm items-center border-b border-black">
+    <header className="bg-white h-9 font-small text-black text-sm items-center">
       <div className="border-b border-black">
-        <div className="container h-9 mx-auto mb-0 flex items-center justify-between">
+        <div className="container h-9 mx-auto flex items-center justify-between">
           <div className="w-96">&nbsp;</div>
           <DefaultCarousel />
           <div className="flex w-96 justify-end">
@@ -90,7 +90,7 @@ export default function Announcementbar() {
       <div
         className={`${
           isLocationDropdownOpen ? "block" : "hidden"
-        }  relative z-50 h-14  flex items-center bg-white divide-y divide-gray-100`}
+        }  relative z-50 h-16 flex items-center bg-white divide-gray-100`}
         id="location-dropdown-menu"
       >
         <div className="container mx-auto justify-end flex">
@@ -100,7 +100,7 @@ export default function Announcementbar() {
                 <button
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   role="menuitem"
-                  onClick={() => handleLocationClick( location )}
+                  onClick={() => handleLocationClick(location)}
                 >
                   <div className="inline-flex items-center">{location}</div>
                 </button>
@@ -112,7 +112,7 @@ export default function Announcementbar() {
       <div
         className={`${
           isLanguageDropdownOpen ? "block" : "hidden"
-        }  relative z-50 h-14  flex items-center bg-white divide-y divide-gray-100`}
+        }  relative z-50 h-16  flex items-center bg-white divide-gray-100`}
         id="language-dropdown-menu"
       >
         <div className="container mx-auto justify-end flex">

@@ -4,6 +4,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUserLarge } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import ReverseButton from "../reuseables/button";
+import NavLinks from "./navLinks";
 
 export default function Navbar() {
   const [searchInputValue, setSearchInputValue] = useState("");
@@ -13,16 +14,14 @@ export default function Navbar() {
   }
   return (
     <header className="sticky bg-black top-0 z-0">
-      <div className="container mx-auto h-10 flex flex-wrap p-2.5 flex-col md:flex-row items-center text-white">
-        <div className="title-font font-medium">
-          <div className="ml-3 text-xl">AfroVibe</div>
+      <div className="container mx-auto h-16 flex flex-wrap flex-col md:flex-row items-center text-white">
+        <div className="title-font font-medium text-xl pr-4 border-r-2 cursor-pointer ">
+          AfroVibe
         </div>
-        <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-whtie-700 flex flex-wrap items-center text-base justify-center">
-          <ReverseButton name="Men" action="" reverse={false} />
-          <ReverseButton name="Women" action="" reverse={false} />
-          <ReverseButton name="Accessories" action="" reverse={false} />
-          <ReverseButton name="Collections" action="" reverse={false} />
+        <nav className="mr-auto px-4 flex flex-wrap items-center justify-center">
+          <NavLinks />
         </nav>
+
         <div className="relative mr-5">
           <input
             type="search"
