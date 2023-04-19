@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import DefaultCarousel from "../reuseables/carousel";
 import { languages, locations } from "../../data/otherdata";
+import Dropdown from "../reuseables/dropdown";
 
 export default function Announcementbar() {
-  const [currentLocation, setCurrentLocation] = useState(locations[0]);
+  const [currentLocation, setCurrentLocation] = useState(locations[0].name);
   const [currentLanguage, setCurrentLanguage] = useState(languages[0].name);
   const [currentSVG, setCurrentSVG] = useState(languages[0].svg);
   const [isLocationDropdownOpen, setIsLocationDropdownOpen] = useState(false);
@@ -13,15 +14,19 @@ export default function Announcementbar() {
   const locationdropdownRef = useRef<HTMLDivElement>(null);
   const languagedropdownRef = useRef<HTMLDivElement>(null);
 
-  const handleLanguageClick = (language: string, svg: JSX.Element) => {
-    setCurrentSVG(svg);
-    setCurrentLanguage(language);
-    setIsLanguageDropdownOpen(false);
-  };
-
-  const handleLocationClick = (location: string) => {
-    setCurrentLocation(location);
-    setIsLocationDropdownOpen(false);
+  const handleClick = (clickedOption: string) => {
+    if (languages.some((language) => language.name === clickedOption)) {
+      const language = languages.find((lang) => lang.name === clickedOption);
+      const svg = language!.svg;
+      setCurrentSVG(svg);
+      setCurrentLanguage(language!.name);
+      setIsLanguageDropdownOpen(false);
+    }
+    if (locations.some((location) => location.name === clickedOption)) {
+      const location = locations.find((loc) => loc.name === clickedOption);
+      setCurrentLocation(location!.name);
+      setIsLocationDropdownOpen(false);
+    }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -56,7 +61,6 @@ export default function Announcementbar() {
             <div ref={locationdropdownRef}>
               <button
                 type="button"
-                data-dropdown-toggle="location-dropdown-menu"
                 className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
                 onClick={() =>
                   setIsLocationDropdownOpen(!isLocationDropdownOpen)
@@ -73,7 +77,6 @@ export default function Announcementbar() {
             <div ref={languagedropdownRef}>
               <button
                 type="button"
-                data-dropdown-toggle="language-dropdown-menu"
                 className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
                 onClick={() =>
                   setIsLanguageDropdownOpen(!isLanguageDropdownOpen)
@@ -86,56 +89,16 @@ export default function Announcementbar() {
           </div>
         </div>
       </div>
-      {/* <!-- Dropdown -->  */}
-      <div
-        className={`${
-          isLocationDropdownOpen ? "block" : "hidden"
-        }  relative z-50 h-16 flex items-center bg-white divide-gray-100`}
-        id="location-dropdown-menu"
-      >
-        <div className="container mx-auto justify-end flex">
-          <ul className="font-medium flex flex-row flex-wrap" role="none">
-            {locations.map((location) => (
-              <li>
-                <button
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                  onClick={() => handleLocationClick(location)}
-                >
-                  <div className="inline-flex items-center">{location}</div>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div
-        className={`${
-          isLanguageDropdownOpen ? "block" : "hidden"
-        }  relative z-50 h-16  flex items-center bg-white divide-gray-100`}
-        id="language-dropdown-menu"
-      >
-        <div className="container mx-auto justify-end flex">
-          <ul className="font-medium flex flex-row flex-wrap" role="none">
-            {languages.map((language) => (
-              <li>
-                <button
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                  onClick={() =>
-                    handleLanguageClick(language.name, language.svg)
-                  }
-                >
-                  <div className="inline-flex items-center">
-                    {language.svg}
-                    {language.name}
-                  </div>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <Dropdown
+        isDropdownOpen={isLocationDropdownOpen}
+        array={locations}
+        handleClick={handleClick}
+      />
+      <Dropdown
+        isDropdownOpen={isLanguageDropdownOpen}
+        array={languages}
+        handleClick={handleClick}
+      />
     </header>
   );
 }

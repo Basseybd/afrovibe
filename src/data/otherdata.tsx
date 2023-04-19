@@ -15,8 +15,8 @@ export const languages = [
 ];
 
 export const locations = [
-  "Worldwide",
-  "France",
-  "United Kingdom",
-  "United States",
+  { name: "Worldwide" },
+  { name: "France" },
+  { name: "United Kingdom" },
+  { name: "United States" },
 ];
