@@ -53,7 +53,6 @@ export default function Announcementbar() {
 
   return (
     <header className="bg-white h-9 font-small text-black text-sm items-center">
-      <div className="border-b border-black">
         <div className="container h-9 mx-auto flex items-center justify-between">
           <div className="w-96">&nbsp;</div>
           <DefaultCarousel />
@@ -87,7 +86,6 @@ export default function Announcementbar() {
               </button>
             </div>
           </div>
-        </div>
       </div>
       <Dropdown
         isDropdownOpen={isLocationDropdownOpen}

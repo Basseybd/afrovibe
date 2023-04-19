@@ -1,13 +1,13 @@
 import Announcementbar from "./components/sections/announcementBar";
 import Navbar from "./components/sections/navBar";
-import Newcollaboration from "./components/sections/newcollaboration";
+import Body from "./components/sections/body";
 
 function App() {
   return (
     <div className="">
       <Announcementbar />
       <Navbar />
-      <Newcollaboration />
+      <Body />
     </div>
   );
 }

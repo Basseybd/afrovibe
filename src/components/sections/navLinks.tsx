@@ -9,7 +9,7 @@ export default function NavLinks() {
           <div className="flex cursor-pointer h-16 items-center group">
             <div className="pr-5 hover:underline">{header.name}</div>
             {header.submenu && (
-              <div className="absolute top-16 left-0 w-full hidden bg-white group-hover:block group-hover:md:block hover:md:block">
+              <div className="absolute top-16 left-4 w-full hidden bg-white group-hover:block group-hover:md:block hover:md:block">
                 <div className="container mx-auto">
                   <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-0 justify-start">
                     {header.sublinks.map((mysublinks) => (
