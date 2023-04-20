@@ -31,7 +31,7 @@ export default function ImageWithOverlay(props: ImageWithOverlayProps) {
               reverse={true}
               bgColor="bg-white"
               textColor="text-black"
-              hieght="h-12"
+              height="h-12"
               width="w-3/4"
               padding="p-5"
             />

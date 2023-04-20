@@ -11,9 +11,9 @@ export default function NavLinks() {
               {header.name}
             </div>
             {header.submenu && (
-              <div className="absolute top-16 left-4 w-full hidden bg-white group-hover:block group-hover:md:block hover:md:block">
-                <div className="container mx-auto">
-                  <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-0 justify-start">
+              <div className="absolute top-16 left-0 w-full hidden bg-white group-hover:block group-hover:md:block hover:md:block">
+                <div className="max-w-[80%] mx-auto">
+                  <div className="grid sm:grid-cols-1 md:grid-cols-6 lg:grid-cols-9 gap-0 justify-start">
                     {header.sublinks.map((mysublinks) => (
                       <div>
                         <div className="text-lg text-black font-semibold">

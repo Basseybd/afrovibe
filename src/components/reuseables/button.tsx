@@ -4,7 +4,7 @@ interface ButtonProps {
   reverse: boolean;
   bgColor: string;
   textColor?: string;
-  hieght?: string;
+  height?: string;
   width?: string;
   padding?: string;
 }
@@ -14,11 +14,8 @@ export default function Button(props: ButtonProps) {
     <div>
       {props.reverse ? (
         <button
-          className={`relative outline outline-1 ${props.textColor} ${
-            props.bgColor
-          } ${props.hieght} ${props.width} ${
-            props.padding
-          } flex items-center justify-center outline outline-2 rounded-full px-3 text-sm font-medium ${
+          className={` ${props.textColor} ${props.bgColor} ${props.height} ${props.width
+          } ${props.padding} relative outline outline-2 flex items-center justify-center rounded-full px-3 text-sm font-medium ${
             props.bgColor === "bg-transparent"
               ? "hover:bg-white"
               : "hover:bg-black hover:text-white hover:outline-0"

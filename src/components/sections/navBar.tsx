@@ -14,21 +14,21 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky bg-transparent top-0 z-40">
-      <div className="container mx-auto h-16 flex flex-wrap flex-col md:flex-row items-center transition ease-in-out duration-700 text-white hover:bg-white hover:text-black">
-        <div className="title-font font-medium text-xl px-4 border-r-2 cursor-pointer">
+    <header className="sticky bg-transparent top-0 z-40 hover:bg-white">
+      <div className="max-w-[80%] mx-auto h-16 flex flex-wrap flex-col md:flex-row items-center transition ease-in-out duration-700 text-white  hover:text-black">
+        <div className="title-font font-medium text-xl pr-4 border-r-2 cursor-pointer">
           AfroVibe
         </div>
         <nav className="mr-auto px-4 flex flex-wrap items-center justify-center">
           <NavLinks />
         </nav>
 
-        <div className="relative flex items-center h-8">
-          <div className="relative">
+        <div className="relative flex items-center justify-center h-8">
+          <div className="relative h-full">
             <input
               type="search"
               id="floating_outlined"
-              className="block h-full w-11/12 text-sm bg-transparent rounded-full outline  focus:border-black focus:text-black focus:border-1 peer"
+              className="block h-full w-11/12 text-sm bg-transparent rounded-full outline focus:border-black focus:text-black focus:border-1 peer"
               placeholder=" "
               value={searchInputValue}
               onBlur={handleSearchInputBlur}
@@ -42,17 +42,17 @@ export default function Navbar() {
               Search
             </label>
           </div>
-          <div>
+          <div className="relative">
             <Button
               name="Join the movement"
               action=""
               reverse={true}
               bgColor="bg-transparent"
-              hieght="h-8"
+              height="h-7"
               width="w-full"
             />
           </div>
-          <button className="pr-3 pl-6">
+          <button className="pr-3 pl-3">
             <FontAwesomeIcon icon={faUserLarge} />
           </button>
           <button className="px-3">

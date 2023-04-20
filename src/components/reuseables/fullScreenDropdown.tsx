@@ -14,7 +14,7 @@ export default function FullScreenDropdown(props: fullScreenDropdownProps) {
         props.isDropdownOpen ? "block" : "hidden"
       }  relative z-50 h-16  flex items-center bg-white divide-gray-100`}
     >
-      <div className="container mx-auto justify-end flex">
+      <div className="max-w-[80%] w-full mx-auto justify-end flex">
         <ul className="font-medium flex flex-row flex-wrap" role="none">
           {props.array.map((element) => (
             <li>

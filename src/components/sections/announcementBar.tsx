@@ -53,7 +53,7 @@ export default function Announcementbar() {
 
   return (
     <header className="bg-white h-9 font-small text-black text-sm items-center">
-      <div className="container h-9 mx-auto flex items-center justify-between">
+      <div className="max-w-[80%] h-9 mx-auto flex items-center justify-between">
         <div className="w-96">&nbsp;</div>
         <AutoCarousel />
         <div className="flex w-96 justify-end">
