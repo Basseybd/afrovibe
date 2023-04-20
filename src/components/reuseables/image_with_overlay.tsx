@@ -12,15 +12,17 @@ interface ImageWithOverlayProps {
 
 export default function ImageWithOverlay(props: ImageWithOverlayProps) {
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <div className={`aboslute z-0 ${props.specialStyling}`}>
-        <div className="container mx-auto">
+        <div className="">
           <img
             src={props.imagePath}
             alt={props.imageDescription}
-            className={` ${props.extraStyling}`}
+            className="h-full w-full object-contain"
           />
-          <div className="absolute bottom-0 z-10 text-white pb-4 pl-4">
+          <div
+            className={`absolute bottom-0 z-10 text-white pb-4 pl-4 ${props.extraStyling}`}
+          >
             <div className="text-base font-normal">{props.subheading}</div>
             <div className="text-3xl font-bold pb-2">{props.heading}</div>
             <Button
