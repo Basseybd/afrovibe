@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleChevronLeft,
+  faCircleChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 interface ManualCarouselProps {
+  title: string;
   images: {
     name: string;
     imagePath: string;
@@ -10,39 +15,57 @@ interface ManualCarouselProps {
 }
 
 export default function ManualCarousel(props: ManualCarouselProps) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const handlePrevClick = () => {
-    setCurrentSlide(currentSlide === 0 ? 2 : currentSlide - 1);
-  };
-
-  const handleNextClick = () => {
-    setCurrentSlide(currentSlide === 2 ? 0 : currentSlide + 1);
-  };
-
   return (
-    <div className="container mx-auto h-16 flex flex-wrap flex-col md:flex-row items-center transition ease-in-out duration-700 text-white hover:bg-white hover:text-black">
-      <div className="carousel">
-        <div
-          className="carousel-inner"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          <div className="carousel-item">
-            <img src="https://via.placeholder.com/300x200" alt="slide 1" />
-          </div>
-          <div className="carousel-item">
-            <img src="https://via.placeholder.com/300x200" alt="slide 2" />
-          </div>
-          <div className="carousel-item">
-            <img src="https://via.placeholder.com/300x200" alt="slide 3" />
-          </div>
+    <div className="w-full flex flex-col text-white justify-center items-start">
+      <div className="text-sm text-black font-normal pt-6">Shop category</div>
+      <div className="flex w-full justify-between pb-4">
+        <div className="text-xl text-black font-bold pb-2">Featured Items</div>
+        <div className="text-black">
+          <button className="pr-3 pl-3">
+            <FontAwesomeIcon icon={faCircleChevronLeft} size="2xl" />
+          </button>
+          <button className="pr-3 pl-3">
+            <FontAwesomeIcon icon={faCircleChevronRight} size="2xl" />
+          </button>
         </div>
-        <button className="carousel-prev" onClick={handlePrevClick}>
-          Prev
-        </button>
-        <button className="carousel-next" onClick={handleNextClick}>
-          Next
-        </button>
+      </div>
+      <div className="w-full grid-cols-3 gap-y-4 gap-x-4 flex justify-between">
+        <div className="relative ">
+          <img
+            src={require("../../assests/afro_vibe_check.png")}
+            alt="afrovibe check"
+            className="opacity-100 hover:opacity-0 transition-opacity duration-300"
+          />
+          <img
+            src={require("../../assests/do_you_pass.png")}
+            alt="afrovibe check hover"
+            className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300"
+          />
+        </div>
+        <div className="relative">
+          <img
+            src={require("../../assests/watch_this_space.png")}
+            alt="watch this space"
+            className="opacity-100 hover:opacity-0 transition-opacity duration-300"
+          />
+          <img
+            src={require("../../assests/i_passed_the_vibe_check.png")}
+            alt="watch this space hover"
+            className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300"
+          />
+        </div>
+        <div className="relative">
+          <img
+            src={require("../../assests/afro_vibe_check.png")}
+            alt="afrovibe check"
+            className="opacity-100 hover:opacity-0 transition-opacity duration-300"
+          />
+          <img
+            src={require("../../assests/do_you_pass.png")}
+            alt="afrovibe check hover"
+            className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300"
+          />
+        </div>
       </div>
     </div>
   );

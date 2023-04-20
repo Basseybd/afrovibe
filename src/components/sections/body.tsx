@@ -2,7 +2,7 @@ import ImageWithOverlay from "../reuseables/image_with_overlay";
 import edem_model_1 from "../../assests/edem_model_1.jpeg";
 import { featuredItems } from "../../data/otherdata";
 import ManualCarousel from "../reuseables/manualCarousel";
-import ShopCategory from "./shopCategory";
+import Collections from "./collections";
 
 export default function body() {
   return (
@@ -19,9 +19,11 @@ export default function body() {
         />
       </div>
       <div className="flex max-w-[80%] m-auto items-center justify-center">
-        <ShopCategory />
+        <ManualCarousel title="Comming Soon" images={featuredItems} />
       </div>
-      {/* <ManualCarousel images={featuredItems} /> */}
+      <div className="flex max-w-[80%] m-auto items-center justify-center">
+        <Collections />
+      </div>
     </div>
   );
 }

@@ -53,10 +53,10 @@ export default function Navbar() {
             />
           </div>
           <button className="pr-3 pl-3">
-            <FontAwesomeIcon icon={faUserLarge} />
+            <FontAwesomeIcon icon={faUserLarge} size="lg" />
           </button>
-          <button className="px-3">
-            <FontAwesomeIcon icon={faCartShopping} />
+          <button className="pr-3">
+            <FontAwesomeIcon icon={faCartShopping} size="lg" />
           </button>
         </div>
       </div>
