@@ -1,8 +1,17 @@
 ##Todo:
 
+
+general formating espectiyl for small screens
+
+#Nav bar
+scroll effect for the nav bar
+unify the button and search box in the nav bar
 fix duration of search bar
-general formating
-scroll effect for the announcement bar
-fix search 
-fix manuel carosel
-fix grid
+
+#sections
+add dropdown to featured shop
+
+
+#to add
+footer
+
