@@ -4,8 +4,6 @@ import { featuredItems } from "../../data/otherdata";
 import MultiCarousel from "../reuseables/multiCarousel";
 import Collections from "./collections";
 
-import "react-multi-carousel/lib/styles.css";
-
 
 export default function body() {
   return (

@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import { announcements } from "../../data/otherdata";
 
+interface AutoCarouselProps {
+  textColor: string;
+  direction: string;
+}
 
-const AutoCarousel = () => {
+
+export default function AutoCarousel(props: AutoCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [currentWord, setCurrentWord] = useState(announcements[0]);
   const [previousWord, setPreviousWord] = useState("");
@@ -19,11 +24,13 @@ const AutoCarousel = () => {
   }, [activeIndex, currentWord]);
 
   return (
-    <div className="relative h-9 flex justify-center items-center text-black font-extrabold">
+    <div
+      className={`relative h-9 flex justify-center items-center ${props.textColor} font-extrabold`}
+    >
       {announcements.map((announcement, index) => (
         <div
           key={index}
-          className={`absolute inset-x-0 flex items-center justify-center -top-6 p-1 transform transition-transform duration-1000  ${
+          className={`absolute inset-x-0 flex items-center justify-center -${props.direction}-6 p-1 transform transition-transform duration-1000  ${
             announcement === currentWord
               ? "translate-y-full"
               : announcement === previousWord
@@ -40,4 +47,4 @@ const AutoCarousel = () => {
   );
 };
 
-export default AutoCarousel;
+

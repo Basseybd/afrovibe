@@ -1,7 +1,6 @@
 ##Todo:
 
-
-general formating espectiyl for small screens
+general formating for smaller screens
 
 #Nav bar
 scroll effect for the nav bar
@@ -11,7 +10,6 @@ fix duration of search bar
 #sections
 add dropdown to featured shop
 
-
-#to add
-footer
+fix copy right bar 
+convert all things in the contact bar to dead links
 

@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import AutoCarousel from "./autoCarousel";
+// import AutoCarousel from "./autoCarousel";
 import { languages, locations } from "../../data/otherdata";
 import FullScreenDropdown from "../reuseables/fullScreenDropdown";
 
-export default function Announcementbar() {
+export default function CopyRightBar() {
   const [currentLocation, setCurrentLocation] = useState(locations[0].name);
   const [currentLanguage, setCurrentLanguage] = useState(languages[0].name);
   const [currentSVG, setCurrentSVG] = useState(languages[0].svg);
@@ -52,15 +52,23 @@ export default function Announcementbar() {
   }, []);
 
   return (
-    <header className="bg-white h-9 font-small text-black text-sm items-center">
+    <footer className="bg-black h-9 font-small text-white text-sm items-center">
+      <FullScreenDropdown
+        isDropdownOpen={isLocationDropdownOpen}
+        array={locations}
+        handleClick={handleClick}
+      />
+      <FullScreenDropdown
+        isDropdownOpen={isLanguageDropdownOpen}
+        array={languages}
+        handleClick={handleClick}
+      />
       <div className="max-w-[80%] h-9 mx-auto flex items-center justify-between">
-        <div className="w-96">&nbsp;</div>
-        <AutoCarousel textColor="text-black" direction="top"/>
-        <div className="flex w-96 justify-end">
+        <div className="flex w-96 justify-start">
           <div ref={locationdropdownRef}>
             <button
               type="button"
-              className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+              className="flex items-center font-medium justify-center text-sm rounded-lg cursor-pointer"
               onClick={() => setIsLocationDropdownOpen(!isLocationDropdownOpen)}
             >
               <FontAwesomeIcon
@@ -74,7 +82,7 @@ export default function Announcementbar() {
           <div ref={languagedropdownRef}>
             <button
               type="button"
-              className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+              className="flex items-center font-medium justify-center px-4 text-sm rounded-lg cursor-pointer"
               onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
             >
               {currentSVG}
@@ -82,17 +90,11 @@ export default function Announcementbar() {
             </button>
           </div>
         </div>
+        {/* <AutoCarousel textColor="text-white" direction="bottom"/> */}
+        <div className="w-96 flex flex-col items-end">
+          © 2023 Afrovibe
+        </div>
       </div>
-      <FullScreenDropdown
-        isDropdownOpen={isLocationDropdownOpen}
-        array={locations}
-        handleClick={handleClick}
-      />
-      <FullScreenDropdown
-        isDropdownOpen={isLanguageDropdownOpen}
-        array={languages}
-        handleClick={handleClick}
-      />
-    </header>
+    </footer>
   );
 }

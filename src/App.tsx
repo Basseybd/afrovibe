@@ -1,6 +1,7 @@
 import Announcementbar from "./components/sections/announcementBar";
 import Navbar from "./components/sections/navBar";
 import Body from "./components/sections/body";
+import Footer from "./components/sections/footer";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Announcementbar />
       <Navbar />
       <Body />
+      <Footer />
     </div>
   );
 }
