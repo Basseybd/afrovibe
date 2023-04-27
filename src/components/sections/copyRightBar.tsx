@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-// import AutoCarousel from "./autoCarousel";
+import AutoCarousel from "./autoCarousel";
 import { languages, locations } from "../../data/otherdata";
 import FullScreenDropdown from "../reuseables/fullScreenDropdown";
 
@@ -52,23 +52,29 @@ export default function CopyRightBar() {
   }, []);
 
   return (
-    <footer className="bg-black h-9 font-small text-white text-sm items-center">
+    <footer className="bg-black h-16 font-small text-white text-sm items-center">
       <FullScreenDropdown
         isDropdownOpen={isLocationDropdownOpen}
         array={locations}
         handleClick={handleClick}
+        position="justify-start"
+        textstyling="text-white hover:bg-gray-500"
+        bgColor="bg-black"
       />
       <FullScreenDropdown
         isDropdownOpen={isLanguageDropdownOpen}
         array={languages}
         handleClick={handleClick}
+        position="justify-start"
+        textstyling="text-white hover:bg-gray-500"
+        bgColor="bg-black"
       />
-      <div className="max-w-[80%] h-9 mx-auto flex items-center justify-between">
+      <div className="max-w-[80%] h-full mx-auto flex items-center justify-between">
         <div className="flex w-96 justify-start">
           <div ref={locationdropdownRef}>
             <button
               type="button"
-              className="flex items-center font-medium justify-center text-sm rounded-lg cursor-pointer"
+              className="flex items-center font-thin justify-center text-sm rounded-lg cursor-pointer"
               onClick={() => setIsLocationDropdownOpen(!isLocationDropdownOpen)}
             >
               <FontAwesomeIcon
@@ -82,7 +88,7 @@ export default function CopyRightBar() {
           <div ref={languagedropdownRef}>
             <button
               type="button"
-              className="flex items-center font-medium justify-center px-4 text-sm rounded-lg cursor-pointer"
+              className="flex items-center font-thin justify-center px-4 text-sm rounded-lg cursor-pointer"
               onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
             >
               {currentSVG}
@@ -90,10 +96,8 @@ export default function CopyRightBar() {
             </button>
           </div>
         </div>
-        {/* <AutoCarousel textColor="text-white" direction="bottom"/> */}
-        <div className="w-96 flex flex-col items-end">
-          © 2023 Afrovibe
-        </div>
+        <AutoCarousel textColor="text-white" direction="bottom" />
+        <div className="w-96 flex flex-col items-end">© 2023 Afrovibe</div>
       </div>
     </footer>
   );

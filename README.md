@@ -10,6 +10,5 @@ fix duration of search bar
 #sections
 add dropdown to featured shop
 
-fix copy right bar 
-convert all things in the contact bar to dead links
+convert all things in the contact bar to dead buttons
 

@@ -5,6 +5,9 @@ interface fullScreenDropdownProps {
     svg?: JSX.Element;
   }[];
   handleClick: (clickedOption: string) => void;
+  position?: string;
+  textstyling?: string;
+  bgColor?: string;
 }
 
 export default function FullScreenDropdown(props: fullScreenDropdownProps) {
@@ -12,14 +15,14 @@ export default function FullScreenDropdown(props: fullScreenDropdownProps) {
     <div
       className={`${
         props.isDropdownOpen ? "block" : "hidden"
-      }  relative z-50 h-16  flex items-center bg-white divide-gray-100`}
+      }  relative z-50 h-16  flex items-center ${props.bgColor} divide-gray-100`}
     >
-      <div className="max-w-[80%] w-full mx-auto justify-end flex">
+      <div className={`flex max-w-[80%] w-full mx-auto  ${props.position}`}>
         <ul className="font-medium flex flex-row flex-wrap" role="none">
-          {props.array.map((element) => ( 
+          {props.array.map((element) => (
             <li>
               <button
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                className={`block px-4 py-2 text-sm ${props.textstyling}`}
                 role="menuitem"
                 onClick={() => props.handleClick(element.name)}
               >

@@ -55,12 +55,12 @@ export default function Announcementbar() {
     <header className="bg-white h-9 font-small text-black text-sm items-center">
       <div className="max-w-[80%] h-9 mx-auto flex items-center justify-between">
         <div className="w-96">&nbsp;</div>
-        <AutoCarousel textColor="text-black" direction="top"/>
+        <AutoCarousel textColor="text-black" direction="top" />
         <div className="flex w-96 justify-end">
           <div ref={locationdropdownRef}>
             <button
               type="button"
-              className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+              className="flex items-center font-thinjustify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-500"
               onClick={() => setIsLocationDropdownOpen(!isLocationDropdownOpen)}
             >
               <FontAwesomeIcon
@@ -74,7 +74,7 @@ export default function Announcementbar() {
           <div ref={languagedropdownRef}>
             <button
               type="button"
-              className="flex items-center font-medium justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100"
+              className="flex items-center font-thin justify-center px-4 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-500"
               onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
             >
               {currentSVG}
@@ -87,11 +87,17 @@ export default function Announcementbar() {
         isDropdownOpen={isLocationDropdownOpen}
         array={locations}
         handleClick={handleClick}
+        position="justify-end"
+        textstyling="text-black hover:bg-gray-100"
+        bgColor="bg-white"
       />
       <FullScreenDropdown
         isDropdownOpen={isLanguageDropdownOpen}
         array={languages}
         handleClick={handleClick}
+        position="justify-end"
+        textstyling="text-black hover:bg-gray-100"
+        bgColor="bg-white"
       />
     </header>
   );
