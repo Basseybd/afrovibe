@@ -15,7 +15,7 @@ export default function Button(props: ButtonProps) {
       {props.reverse ? (
         <button
           className={` ${props.textColor} ${props.bgColor} ${props.height} ${props.width
-          } ${props.padding} relative outline outline-2 flex items-center justify-center rounded-full px-3 text-sm font-medium ${
+          } ${props.padding} relative outline flex items-center justify-center rounded-full px-3 text-sm font-medium ${
             props.bgColor === "bg-transparent"
               ? "hover:bg-white"
               : "hover:bg-black hover:text-white hover:outline-0"

@@ -20,8 +20,7 @@ react-router-dom
 
 ## Todo 
 ### Bugs
-General formating for smaller screens and mobile \
-Fix duration of search bar 
+None yet!
 
 ### Improvments
 Add dropdown to featured shop \
