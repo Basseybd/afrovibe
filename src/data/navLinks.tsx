@@ -48,7 +48,6 @@ export const navHeaders = [
           { name: "Tops", link: "/" },
           { name: "T-shrits", link: "/" },
           { name: "Shirts", link: "/" },
-          { name: "Shirts", link: "/" },
           { name: "Dresses", link: "/" },
           { name: "Swiumwear", link: "/" },
         ],

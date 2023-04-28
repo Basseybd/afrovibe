@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "./button";
 
 interface ImageWithOverlayProps {
@@ -25,16 +26,18 @@ export default function ImageWithOverlay(props: ImageWithOverlayProps) {
           >
             <div className="text-base font-normal">{props.subheading}</div>
             <div className="text-3xl font-bold pb-2">{props.heading}</div>
-            <Button
-              name={props.buttonText}
-              action=""
-              reverse={true}
-              bgColor="bg-white"
-              textColor="text-black"
-              height="h-12"
-              width="w-3/4"
-              padding="p-5"
-            />
+            <Link to="placeholder">
+              <Button
+                name={props.buttonText}
+                action=""
+                reverse={true}
+                bgColor="bg-white"
+                textColor="text-black"
+                height="h-12"
+                width="w-3/4"
+                padding="p-5"
+              />
+            </Link>
           </div>
         </div>
       </div>

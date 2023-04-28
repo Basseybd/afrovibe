@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import AutoCarousel from "./autoCarousel";
+import AutoCarousel from "../reuseables/autoCarousel";
 import { languages, locations } from "../../data/otherdata";
 import FullScreenDropdown from "../reuseables/fullScreenDropdown";
 

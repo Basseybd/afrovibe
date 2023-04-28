@@ -38,6 +38,7 @@ export default function MultiCarousel(props: MultiCarouselProps) {
       items: 2,
     },
   };
+  const rtlvalue = false;
 
   return (
     <div className="w-full flex flex-col text-white justify-center items-start">
@@ -64,20 +65,16 @@ export default function MultiCarousel(props: MultiCarouselProps) {
           minimumTouchDrag={80}
           pauseOnHover
           customLeftArrow={
-            <div className="absolute left-0 mt-4 ml-4 z-10 cursor-pointer">
-              <FontAwesomeIcon
-                icon={faCircleChevronLeft}
-                className="h-10 w-10 text-white"
-              />
-            </div>
+            <FontAwesomeIcon
+              icon={faCircleChevronLeft}
+              className="absolute left-0 mt-4 ml-4 z-10 cursor-pointer h-10 w-10 text-white"
+            />
           }
           customRightArrow={
-            <div className="absolute right-0 mt-4 mr-4 z-10 cursor-pointer">
-              <FontAwesomeIcon
-                icon={faCircleChevronRight}
-                className="h-10 w-10 text-white"
-              />
-            </div>
+            <FontAwesomeIcon
+              icon={faCircleChevronRight}
+              className="absolute right-0 mt-4 mr-4 z-10 cursor-pointer h-10 w-10 text-white"
+            />
           }
           renderArrowsWhenDisabled={false}
           renderButtonGroupOutside={true}

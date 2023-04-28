@@ -20,7 +20,7 @@ export const contactUsLinks = [
     ],
   },
   {
-    name: "AfroVibe",
+    name: "Legal",
     submenu: true,
     sublinks: [
       { name: "Terms of Service", link: "/" },
@@ -31,7 +31,7 @@ export const contactUsLinks = [
     ],
   },
   {
-    name: "AfroVibe",
+    name: "Social",
     submenu: true,
     sublinks: [
       { name: "Twitter", link: "/" },

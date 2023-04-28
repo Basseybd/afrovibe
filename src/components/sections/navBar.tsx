@@ -5,6 +5,7 @@ import { faUserLarge } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Button from "../reuseables/button";
 import NavLinks from "./navLinks";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [searchInputValue, setSearchInputValue] = useState("");
@@ -43,21 +44,27 @@ export default function Navbar() {
             </label>
           </div>
           <div className="relative">
-            <Button
-              name="Join the movement"
-              action=""
-              reverse={true}
-              bgColor="bg-transparent"
-              height="h-7"
-              width="w-full"
-            />
+            <Link to="placeholder">
+              <Button
+                name="Join the movement"
+                action=""
+                reverse={true}
+                bgColor="bg-transparent"
+                height="h-7"
+                width="w-full"
+              />
+            </Link>
           </div>
-          <button className="pr-3 pl-3">
-            <FontAwesomeIcon icon={faUserLarge} size="lg" />
-          </button>
-          <button className="pr-3">
-            <FontAwesomeIcon icon={faCartShopping} size="lg" />
-          </button>
+          <Link to="placeholder">
+            <button className="pr-3 pl-3">
+              <FontAwesomeIcon icon={faUserLarge} size="lg" />
+            </button>
+          </Link>
+          <Link to="placeholder">
+            <button className="pr-3">
+              <FontAwesomeIcon icon={faCartShopping} size="lg" />
+            </button>
+          </Link>
         </div>
       </div>
     </header>
