@@ -27,43 +27,44 @@ export default function Navbar(props: NavbarProps) {
           </div>
         )}
         <nav className="mr-auto px-4 flex flex-wrap items-center justify-center">
-          <NavLinks />
+          <NavLinks
+            breakpoint={props.breakpoint}
+            windowWidth={props.windowWidth}
+          />
         </nav>
 
         <div className="relative flex items-center justify-center h-8">
+          <div className="relative h-full items-center">
+            <input
+              type="search"
+              id="floating_outlined"
+              className="block h-full w-11/12 text-sm bg-transparent rounded-full outline focus:border-black focus:text-black focus:border-1 peer"
+              placeholder=" "
+              value={searchInputValue}
+              onBlur={handleSearchInputBlur}
+              onChange={(event) => setSearchInputValue(event.target.value)}
+            />
+            <label
+              htmlFor="floating_outlined"
+              className="absolute text-sm duration-0 transform -translate-y-4 scale-75 top-2 z-0 origin-[0] rounded-full peer-focus:px-2 peer-focus:text-black peer-focus:opacity-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+            >
+              <FontAwesomeIcon icon={faMagnifyingGlass} className="mr-2" />
+              Search
+            </label>
+          </div>
           {props.windowWidth > props.breakpoint && (
-            <>
-              <div className="relative h-full items-center">
-                <input
-                  type="search"
-                  id="floating_outlined"
-                  className="block h-full w-11/12 text-sm bg-transparent rounded-full outline focus:border-black focus:text-black focus:border-1 peer"
-                  placeholder=" "
-                  value={searchInputValue}
-                  onBlur={handleSearchInputBlur}
-                  onChange={(event) => setSearchInputValue(event.target.value)}
+            <div className="relative">
+              <Link to="placeholder">
+                <Button
+                  name="Join the movement"
+                  action=""
+                  reverse={true}
+                  bgColor="bg-transparent"
+                  height="h-7"
+                  width="w-full"
                 />
-                <label
-                  htmlFor="floating_outlined"
-                  className="absolute text-sm duration-0 transform -translate-y-4 scale-75 top-2 z-0 origin-[0] rounded-full peer-focus:px-2 peer-focus:text-black peer-focus:opacity-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
-                >
-                  <FontAwesomeIcon icon={faMagnifyingGlass} className="mr-2" />
-                  Search
-                </label>
-              </div>
-              <div className="relative">
-                <Link to="placeholder">
-                  <Button
-                    name="Join the movement"
-                    action=""
-                    reverse={true}
-                    bgColor="bg-transparent"
-                    height="h-7"
-                    width="w-full"
-                  />
-                </Link>
-              </div>
-            </>
+              </Link>
+            </div>
           )}
           <Link to="placeholder">
             <button className="pr-3 pl-3">

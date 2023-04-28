@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import { navHeaders } from "../../data/navLinks";
 
-export default function NavLinks() {
+interface NavLinksProps {
+  breakpoint: number;
+  windowWidth: number;
+}
+
+export default function NavLinks(props: NavLinksProps) {
   return (
     <>
       {navHeaders.map((header) => (
@@ -10,7 +15,11 @@ export default function NavLinks() {
           className="flex cursor-pointer h-16 items-center group"
         >
           <div className="flex justify-center items-center pr-5 h-full hover:border-b hover:border-black">
-            {header.name}
+            {props.windowWidth > props.breakpoint ? (
+              <>{header.name}</>
+            ) : (
+              <>{header.name[0]}</>
+            )}
           </div>
           {header.submenu && (
             <div className="absolute top-16 left-0 w-full hidden bg-white group-hover:block group-hover:md:block hover:md:block">
