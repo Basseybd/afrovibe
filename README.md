@@ -18,10 +18,16 @@ Vercel and Netlify
 react-multi-carousel \
 react-router-dom 
 
-### Todo:
+## Todo 
+### Bugs
 General formating for smaller screens and mobile \
-Fix duration of search bar \
-Add dropdown to featured shop 
+Fix duration of search bar 
+
+### Improvments
+Add dropdown to featured shop \
+Move carousel buttons outside of the carousel \
+smoothing transtion of all drop downs \
+Move the 'Todo' out of here and into github issues 
 
 
 ### Feedback is alway welcome please write me at bassey.bd@gmail.com
