@@ -7,7 +7,11 @@ import Button from "../reuseables/button";
 import NavLinks from "./navLinks";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+interface NavbarProps {
+  breakpoint: number;
+  windowWidth: number;
+}
+export default function Navbar(props: NavbarProps) {
   const [searchInputValue, setSearchInputValue] = useState("");
 
   function handleSearchInputBlur() {
@@ -16,16 +20,18 @@ export default function Navbar() {
 
   return (
     <header className="sticky bg-transparent top-0 z-40 hover:bg-white">
-      <div className="max-w-[80%] mx-auto h-16 flex flex-wrap flex-col md:flex-row items-center transition ease-in-out duration-700 text-white  hover:text-black">
-        <div className="title-font font-medium text-xl pr-4 border-r-2 cursor-pointer">
-          AfroVibe
-        </div>
+      <div className="max-w-[80%] mx-auto h-16 flex flex-wrap flex-col md:flex-row items-center justify-center transition ease-in-out duration-700 text-white hover:text-black">
+        {props.windowWidth > props.breakpoint && (
+          <div className="title-font font-medium text-xl pr-4 border-r-2 cursor-pointer">
+            AfroVibe
+          </div>
+        )}
         <nav className="mr-auto px-4 flex flex-wrap items-center justify-center">
           <NavLinks />
         </nav>
 
         <div className="relative flex items-center justify-center h-8">
-          <div className="relative h-full">
+          <div className="relative h-full items-center">
             <input
               type="search"
               id="floating_outlined"
@@ -43,18 +49,20 @@ export default function Navbar() {
               Search
             </label>
           </div>
-          <div className="relative">
-            <Link to="placeholder">
-              <Button
-                name="Join the movement"
-                action=""
-                reverse={true}
-                bgColor="bg-transparent"
-                height="h-7"
-                width="w-full"
-              />
-            </Link>
-          </div>
+          {props.windowWidth > props.breakpoint && (
+            <div className="relative">
+              <Link to="placeholder">
+                <Button
+                  name="Join the movement"
+                  action=""
+                  reverse={true}
+                  bgColor="bg-transparent"
+                  height="h-7"
+                  width="w-full"
+                />
+              </Link>
+            </div>
+          )}
           <Link to="placeholder">
             <button className="pr-3 pl-3">
               <FontAwesomeIcon icon={faUserLarge} size="lg" />

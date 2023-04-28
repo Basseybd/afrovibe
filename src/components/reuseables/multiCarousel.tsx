@@ -38,7 +38,7 @@ export default function MultiCarousel(props: MultiCarouselProps) {
       items: 2,
     },
   };
-  const rtlvalue = false;
+ 
 
   return (
     <div className="w-full flex flex-col text-white justify-center items-start">

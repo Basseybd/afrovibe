@@ -1,12 +1,18 @@
 import CopyRightBar from "./copyRightBar";
 import ContactUs from "./contactUs";
 
-export default function Footer() {
+interface FooterProps {
+  breakpoint: number;
+  windowWidth: number;
+}
 
-
+export default function Footer(props: FooterProps) {
   return (
     <div className="bg-black h-9 font-small text-white text-sm items-center">
-      <ContactUs />
+      <ContactUs
+        breakpoint={props.breakpoint}
+        windowWidth={props.windowWidth}
+      />
       <CopyRightBar />
     </div>
   );

@@ -1,7 +1,12 @@
 import { contactUsLinks } from "../../data/contactUsLinks";
 import { Link } from "react-router-dom";
 
-export default function ContactUs() {
+interface ContactUsProps {
+  breakpoint: number;
+  windowWidth: number;
+}
+
+export default function ContactUs(props: ContactUsProps) {
   return (
     <>
       <div className="bg-black font-small h-96 text-white text-sm items-center pt-16 pb-28 border-b border-white">
@@ -16,6 +21,7 @@ export default function ContactUs() {
               <li>I'm interested in:</li>
             </ul>
           </div>
+           {props.windowWidth > props.breakpoint && (
           <div className="flex grid-cols-4 gap-44">
             {contactUsLinks.map((header) => (
               <div key={header.name}>
@@ -29,7 +35,7 @@ export default function ContactUs() {
                 </ul>
               </div>
             ))}
-          </div>
+          </div>)}
         </div>
       </div>
     </>

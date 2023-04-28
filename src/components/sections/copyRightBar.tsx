@@ -5,6 +5,7 @@ import AutoCarousel from "../reuseables/autoCarousel";
 import { languages, locations } from "../../data/otherdata";
 import FullScreenDropdown from "../reuseables/fullScreenDropdown";
 
+
 export default function CopyRightBar() {
   const [currentLocation, setCurrentLocation] = useState(locations[0].name);
   const [currentLanguage, setCurrentLanguage] = useState(languages[0].name);
@@ -52,7 +53,7 @@ export default function CopyRightBar() {
   }, []);
 
   return (
-    <footer className="bg-black h-16 font-small text-white text-sm items-center">
+    <footer className="bg-black h-16 font-small text-white text-sm items-center justify-c">
       <FullScreenDropdown
         isDropdownOpen={isLocationDropdownOpen}
         array={locations}
@@ -70,7 +71,7 @@ export default function CopyRightBar() {
         bgColor="bg-black"
       />
       <div className="max-w-[80%] h-full mx-auto flex items-center justify-between">
-        <div className="flex w-96 justify-start">
+        <div className="flex w-96 justify-center items-center">
           <div ref={locationdropdownRef}>
             <button
               type="button"
