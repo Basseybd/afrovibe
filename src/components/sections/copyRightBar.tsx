@@ -5,8 +5,11 @@ import AutoCarousel from "../reuseables/autoCarousel";
 import { languages, locations } from "../../data/otherdata";
 import FullScreenDropdown from "../reuseables/fullScreenDropdown";
 
+interface CopyRightBarProps {
+  windowWidth: number;
+}
 
-export default function CopyRightBar() {
+export default function CopyRightBar(props: CopyRightBarProps) {
   const [currentLocation, setCurrentLocation] = useState(locations[0].name);
   const [currentLanguage, setCurrentLanguage] = useState(languages[0].name);
   const [currentSVG, setCurrentSVG] = useState(languages[0].svg);
@@ -71,7 +74,7 @@ export default function CopyRightBar() {
         bgColor="bg-black"
       />
       <div className="max-w-[80%] h-full mx-auto flex items-center justify-between">
-        <div className="flex w-96 justify-center items-center">
+        <div className="flex w-96 justify-start items-center">
           <div ref={locationdropdownRef}>
             <button
               type="button"
@@ -97,8 +100,12 @@ export default function CopyRightBar() {
             </button>
           </div>
         </div>
-        <AutoCarousel textColor="text-white" direction="bottom" />
-        <div className="w-96 flex flex-col items-end">© 2023 Afrovibe</div>
+        {props.windowWidth > 700 && (
+          <AutoCarousel textColor="text-white" direction="bottom" />
+        )}
+        {props.windowWidth > 700 && (
+          <div className="w-96 flex flex-col items-end">© 2023 Afrovibe</div>
+        )}
       </div>
     </footer>
   );

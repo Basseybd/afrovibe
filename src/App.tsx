@@ -27,15 +27,14 @@ function App() {
                   breakpoint={breakpoint}
                   windowWidth={windowWidth}
                 />
-                <Navbar breakpoint={breakpoint} windowWidth={windowWidth} />{" "}
-                <Body />
+                <Navbar windowWidth={windowWidth} /> <Body />
                 <div className="mb-32"></div>
               </>
             }
           />
           <Route path="/placeholder" element={<Placeholder />} />
         </Routes>
-        <Footer breakpoint={breakpoint} windowWidth={windowWidth} />
+        <Footer windowWidth={windowWidth} />
       </div>
     </Router>
   );

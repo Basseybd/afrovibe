@@ -13,7 +13,7 @@ import iPassedTheVibeCheck from "../assests/i_passed_the_vibe_check.png";
 export const words = ["WATCH", "THIS", "SPACE"];
 
 export const languages = [
-  { name: "English (US)", svg: English_US_SVG },
+  { name: "English", svg: English_US_SVG },
   { name: "Deutsch", svg: Deutsch_SVG },
   { name: "Italiano", svg: Italiano_SVG },
   { name: "中文 (繁體)", svg: 中文_繁體_SVG },

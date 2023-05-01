@@ -1,37 +1,62 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { navHeaders } from "../../data/navLinks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronUp,
+  faChevronDown,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons";
 
 interface NavLinksProps {
-  breakpoint: number;
   windowWidth: number;
 }
 
 export default function NavLinks(props: NavLinksProps) {
+  const [showNav, setShowNav] = useState(false);
+  const [showSubmenu, setShowSubmenu] = useState("");
   return (
     <>
-      {navHeaders.map((header) => (
-        <div
-          key={header.name}
-          className="flex cursor-pointer h-16 items-center group"
+      {props.windowWidth < 700 && (
+        <button
+          className="block md:hidden"
+          onClick={() => setShowNav(!showNav)}
         >
-          <div className="flex justify-center items-center pr-5 h-full hover:border-b hover:border-black">
-            {props.windowWidth > props.breakpoint ? (
-              <>{header.name}</>
-            ) : (
-              <>{header.name[0]}</>
-            )}
-          </div>
-          {header.submenu && (
-            <div className="absolute top-16 left-0 w-full hidden bg-white group-hover:block group-hover:md:block hover:md:block">
-              <div className="max-w-[80%] mx-auto">
-                <div className="grid sm:grid-cols-1 md:grid-cols-6 lg:grid-cols-9 gap-0 justify-start">
-                  {header.sublinks.map((mysublinks) => (
-                    <div key={mysublinks.Head}>
+          <FontAwesomeIcon icon={faBars} />
+        </button>
+      )}
+      <div className={`md:block ${showNav ? "" : "hidden"} md:flex-grow`}>
+        <ul className="md:flex md:items-center md:w-auto">
+          {navHeaders.map((header) => (
+            <li key={header.name} className="md:flex-grow">
+              <div className="flex items-center">
+                <div className="ml-4 font-medium text-gray-300 hover:text-white">
+                  {header.name}
+                </div>
+                {header.submenu && (
+                  <div className="md:hidden ml-2">
+                    <button
+                      className="text-gray-500 hover:text-white focus:text-white focus:outline-none"
+                      onClick={() => setShowSubmenu(header.name)}
+                    >
+                      <FontAwesomeIcon icon={faChevronDown} />
+                    </button>
+                  </div>
+                )}
+              </div>
+              {header.submenu && (
+                <ul
+                  className={`md:hidden ${
+                    showSubmenu === header.name ? "block" : "hidden"
+                  }`}
+                >
+                  {header.sublinks.map((sublink) => (
+                    <div key={sublink.Head}>
                       <div className="text-lg text-black font-semibold">
-                        {mysublinks.Head}
+                        {sublink.Head}
                       </div>
                       <ul>
-                        {mysublinks.sublink.map((slink) => (
+                        {sublink.sublink.map((slink) => (
                           <li
                             key={slink.name}
                             className="text-sm text-black my-2.5"
@@ -47,12 +72,12 @@ export default function NavLinks(props: NavLinksProps) {
                       </ul>
                     </div>
                   ))}
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }

@@ -8,7 +8,6 @@ import NavLinks from "./navLinks";
 import { Link } from "react-router-dom";
 
 interface NavbarProps {
-  breakpoint: number;
   windowWidth: number;
 }
 export default function Navbar(props: NavbarProps) {
@@ -21,16 +20,13 @@ export default function Navbar(props: NavbarProps) {
   return (
     <header className="sticky bg-transparent top-0 z-40 hover:bg-white">
       <div className="max-w-[80%] mx-auto h-16 flex flex-wrap flex-col md:flex-row items-center justify-center transition ease-in-out duration-700 text-white hover:text-black">
-        {props.windowWidth > props.breakpoint && (
+        {props.windowWidth > 880 && (
           <div className="title-font font-medium text-xl pr-4 border-r-2 cursor-pointer">
             AfroVibe
           </div>
         )}
         <nav className="mr-auto px-4 flex flex-wrap items-center justify-center">
-          <NavLinks
-            breakpoint={props.breakpoint}
-            windowWidth={props.windowWidth}
-          />
+          <NavLinks windowWidth={props.windowWidth} />
         </nav>
 
         <div className="relative flex items-center justify-center h-8">
@@ -52,7 +48,7 @@ export default function Navbar(props: NavbarProps) {
               Search
             </label>
           </div>
-          {props.windowWidth > props.breakpoint && (
+          {props.windowWidth > 1060 && (
             <div className="relative">
               <Link to="placeholder">
                 <Button

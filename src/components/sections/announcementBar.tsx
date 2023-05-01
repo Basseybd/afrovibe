@@ -59,11 +59,9 @@ export default function Announcementbar(props: AnnouncementbarProps) {
   return (
     <header className="bg-white h-9 font-small text-black text-sm items-center">
       <div className="max-w-[80%] h-9 mx-auto flex items-center justify-between">
-        {props.windowWidth > props.breakpoint && (
-          <div className="w-96 ">&nbsp;</div>
-        )}
+        {props.windowWidth > 880 && <div className="w-96 ">&nbsp;</div>}
         <AutoCarousel textColor="text-black" direction="top" />
-        {props.windowWidth > props.breakpoint && (
+        {props.windowWidth > 880 && (
           <div className="flex w-96 justify-end">
             <div ref={locationdropdownRef}>
               <button
