@@ -1,11 +1,11 @@
 export const navHeaders = [
   {
-    name: "Men",
+    header: "Men",
     submenu: true,
-    sublinks: [
+    subheaderings: [
       {
-        Head: "Tops",
-        sublink: [
+        subheader: "Tops",
+        sublinks: [
           { name: "All tops", link: "/" },
           { name: "Jackets", link: "/" },
           { name: "Hoodies & Sweaters", link: "/" },
@@ -15,8 +15,8 @@ export const navHeaders = [
         ],
       },
       {
-        Head: "Bottoms",
-        sublink: [
+        subheader: "Bottoms",
+        sublinks: [
           { name: "All Bottoms", link: "/" },
           { name: "Pants", link: "/" },
           { name: "Jeans", link: "/" },
@@ -26,8 +26,8 @@ export const navHeaders = [
         ],
       },
       {
-        Head: "Season Highlights",
-        sublink: [
+        subheader: "Season Highlights",
+        sublinks: [
           { name: "Summer 23", link: "/" },
           { name: "Essentials", link: "/" },
           { name: "Co-ords", link: "/" },
@@ -36,12 +36,12 @@ export const navHeaders = [
     ],
   },
   {
-    name: "Women",
+    header: "Women",
     submenu: true,
-    sublinks: [
+    subheaderings: [
       {
-        Head: "Tops",
-        sublink: [
+        subheader: "Tops",
+        sublinks: [
           { name: "All tops", link: "/" },
           { name: "Jackets", link: "/" },
           { name: "Hoodies & Sweaters", link: "/" },
@@ -53,8 +53,8 @@ export const navHeaders = [
         ],
       },
       {
-        Head: "Bottoms",
-        sublink: [
+        subheader: "Bottoms",
+        sublinks: [
           { name: "All Bottoms", link: "/" },
           { name: "Pants", link: "/" },
           { name: "Jeans", link: "/" },
@@ -65,8 +65,8 @@ export const navHeaders = [
         ],
       },
       {
-        Head: "Season Highlights",
-        sublink: [
+        subheader: "Season Highlights",
+        sublinks: [
           { name: "Summer 23", link: "/" },
           { name: "Essentials", link: "/" },
           { name: "Co-ords", link: "/" },
@@ -75,12 +75,12 @@ export const navHeaders = [
     ],
   },
   {
-    name: "Accessories",
+    header: "Accessories",
     submenu: true,
-    sublinks: [
+    subheaderings: [
       {
-        Head: "Accessories",
-        sublink: [
+        subheader: "Accessories",
+        sublinks: [
           { name: "All Accessories", link: "/" },
           { name: "HeadWear", link: "/" },
           { name: "Socks", link: "/" },
@@ -92,16 +92,16 @@ export const navHeaders = [
     ],
   },
   {
-    name: "Collections",
+    header: "Collections",
     submenu: true,
-    sublinks: [
+    subheaderings: [
       {
-        Head: "Collections",
-        sublink: [{ name: "Essentials", link: "/" }],
+        subheader: "Collections",
+        sublinks: [{ name: "Essentials", link: "/" }],
       },
       {
-        Head: "Collaboirations",
-        sublink: [{ name: "DODO GANG", link: "/" }],
+        subheader: "Collaboirations",
+        sublinks: [{ name: "DODO GANG", link: "/" }],
       },
     ],
   },
