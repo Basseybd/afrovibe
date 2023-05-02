@@ -19,7 +19,7 @@ export default function Navbar(props: NavbarProps) {
 
   return (
     <header className="sticky bg-transparent top-0 z-40 hover:bg-white">
-      <div className="max-w-[80%] mx-auto h-16 flex flex-wrap flex-col md:flex-row items-center justify-center transition ease-in-out duration-700 text-white hover:text-black">
+      <div className="max-w-[80%] mx-auto h-16 flex flex-wrap flex-row items-center justify-center transition ease-in-out duration-700 text-white hover:text-black">
         {props.windowWidth > 880 && (
           <div className="title-font font-medium text-xl pr-4 border-r-2 cursor-pointer">
             AfroVibe

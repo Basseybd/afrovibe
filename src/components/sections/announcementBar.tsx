@@ -6,7 +6,6 @@ import { languages, locations } from "../../data/otherdata";
 import FullScreenDropdown from "../reuseables/fullScreenDropdown";
 
 interface AnnouncementbarProps {
-  breakpoint: number;
   windowWidth: number;
 }
 

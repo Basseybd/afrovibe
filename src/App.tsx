@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const breakpoint = 768; // screen size below which language buttons won't be shown
+
 
   useEffect(() => {
     const handleWindowResize = () => setWindowWidth(window.innerWidth);
@@ -23,10 +23,7 @@ function App() {
             path="/"
             element={
               <>
-                <Announcementbar
-                  breakpoint={breakpoint}
-                  windowWidth={windowWidth}
-                />
+                <Announcementbar windowWidth={windowWidth} />
                 <Navbar windowWidth={windowWidth} /> <Body />
                 <div className="mb-32"></div>
               </>
