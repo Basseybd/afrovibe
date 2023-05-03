@@ -7,6 +7,7 @@ interface ButtonProps {
   height?: string;
   width?: string;
   padding?: string;
+  extraStyling?: string;
 }
 
 export default function Button(props: ButtonProps) {
@@ -15,10 +16,10 @@ export default function Button(props: ButtonProps) {
       {props.reverse ? (
         <button
           className={` ${props.textColor} ${props.bgColor} ${props.height} ${
-            props.width
-          } ${
+            props.extraStyling
+          } ${props.width} ${
             props.padding
-          } relative  flex items-center justify-center rounded-full px-3 text-sm font-medium ${
+          } relative flex items-center justify-center rounded-full px-3 text-sm font-medium ${
             props.bgColor === "bg-transparent"
               ? "hover:bg-white"
               : "hover:bg-black hover:text-white "

@@ -18,8 +18,8 @@ export default function Navbar(props: NavbarProps) {
   }
 
   return (
-    <header className="sticky bg-transparent top-0 z-40 hover:bg-white">
-      <div className="max-w-[80%] mx-auto h-16 flex flex-wrap flex-row items-center justify-center transition ease-in-out duration-700 text-white hover:text-black">
+    <header className="sticky bg-transparent top-0 z-40 hover:bg-white focus:bg-white">
+      <div className="max-w-[80%] mx-auto h-16 flex flex-nowrap flex-row items-center justify-center transition ease-in-out duration-700 text-white hover:text-black">
         {props.windowWidth > 880 && (
           <div className="title-font font-medium text-xl pr-4 border-r-2 cursor-pointer">
             AfroVibe
@@ -29,12 +29,12 @@ export default function Navbar(props: NavbarProps) {
           <NavLinks windowWidth={props.windowWidth} />
         </nav>
 
-        <div className="relative flex items-center justify-center h-8">
+        <div className="relative flex items-center justify-center text-sm">
           <div className="relative h-full items-center">
             <input
               type="search"
               id="floating_outlined"
-              className="block h-full w-10/12 px-2 text-sm bg-transparent border-2 border-white rounded-full peer"
+              className="w-11/12 p-1.5 bg-transparent border-2 border-white rounded-full transition ease-in-out duration-700 hover:border-black peer"
               placeholder=" "
               value={searchInputValue}
               onBlur={handleSearchInputBlur}
@@ -42,7 +42,7 @@ export default function Navbar(props: NavbarProps) {
             />
             <label
               htmlFor="floating_outlined"
-              className="absolute text-sm duration-0 transform -translate-y-4 scale-75 top-2 z-0 origin-[0] rounded-full peer-focus:px-2
+              className="absolute -translate-y-4 scale-75 top-2 z-0 origin-[0] rounded-full peer-focus:duration-300 
                peer-focus:text-black peer-focus:opacity-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
             >
               <FontAwesomeIcon icon={faMagnifyingGlass} className="mr-2" />
@@ -50,21 +50,23 @@ export default function Navbar(props: NavbarProps) {
             </label>
           </div>
           {props.windowWidth > 1060 && (
-            <div className="relative">
+            <div className="relative h-full items-center">
               <Link to="placeholder">
                 <Button
                   name="Join the movement"
                   action=""
                   reverse={true}
                   bgColor="bg-transparent"
-                  height="h-7"
-                  width="w-full"
+                  height=""
+                  width=""
+                  padding="p-1.5"
+                  extraStyling="border-2 border-white hover:border-black"
                 />
               </Link>
             </div>
           )}
           <Link to="placeholder">
-            <button className="pr-3 pl-3">
+            <button className="px-3">
               <FontAwesomeIcon icon={faUserLarge} size="lg" />
             </button>
           </Link>
