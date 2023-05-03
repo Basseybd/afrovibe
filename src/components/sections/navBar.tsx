@@ -34,7 +34,7 @@ export default function Navbar(props: NavbarProps) {
             <input
               type="search"
               id="floating_outlined"
-              className="block h-full w-11/12 text-sm bg-transparent rounded-full outline focus:border-black focus:text-black focus:border-1 peer"
+              className="block h-full w-11/12 px-2 text-sm bg-transparent border-2 border-white rounded-full  peer"
               placeholder=" "
               value={searchInputValue}
               onBlur={handleSearchInputBlur}
@@ -42,7 +42,8 @@ export default function Navbar(props: NavbarProps) {
             />
             <label
               htmlFor="floating_outlined"
-              className="absolute text-sm duration-0 transform -translate-y-4 scale-75 top-2 z-0 origin-[0] rounded-full peer-focus:px-2 peer-focus:text-black peer-focus:opacity-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+              className="absolute text-sm duration-0 transform -translate-y-4 scale-75 top-2 z-0 origin-[0] rounded-full peer-focus:px-2
+               peer-focus:text-black peer-focus:opacity-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
             >
               <FontAwesomeIcon icon={faMagnifyingGlass} className="mr-2" />
               Search
