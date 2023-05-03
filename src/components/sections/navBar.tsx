@@ -34,7 +34,7 @@ export default function Navbar(props: NavbarProps) {
             <input
               type="search"
               id="floating_outlined"
-              className="block h-full w-11/12 px-2 text-sm bg-transparent border-2 border-white rounded-full  peer"
+              className="block h-full w-10/12 px-2 text-sm bg-transparent border-2 border-white rounded-full peer"
               placeholder=" "
               value={searchInputValue}
               onBlur={handleSearchInputBlur}
