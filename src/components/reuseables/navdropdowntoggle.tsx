@@ -37,8 +37,8 @@ export default function NavDropdownToggle(props: NavDropdownToggleProps) {
   return (
     <div className="absolute flex flex-col bg-white top-16 left-0 w-full border-t">
       {props.navHeaders.map((heading: { [key: string]: any }) => (
-        <div key={heading.header}>
-          <div className="flex cursor-pointer h-16 items-center">
+        <div key={heading.header} className="pl-[12%]">
+          <div className="relative flex cursor-pointer h-16 items-center">
             <button
               onClick={() => handleMenuClick(heading.header)}
               className="relative flex flex-row items-center h-full gap-2"
