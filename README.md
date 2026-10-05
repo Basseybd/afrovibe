@@ -1,36 +1,29 @@
-# React JS Crash Course Reminder app
+# AfroVibe
 
-Hey this is my presonal project where I am emulating a store front. \
-I inspiration from https://dailypaperclothing.com/
+A storefront concept for a streetwear label, built in 2023 with Daily Paper as
+the reference. A rotating announcement bar, a mega-menu with language and region
+pickers, a full-bleed campaign shot, a product carousel that swaps images on
+hover, and a collections grid.
 
-## This is deployed
+Live at [afrovibe.vercel.app](https://afrovibe.vercel.app).
 
-https://afrovibe.vercel.app/ and https://teal-profiterole-fbd551.netlify.app
+It's front end only. There's no cart or checkout yet, and the shop links are
+placeholders.
 
-### Technologies used
+## Stack
 
-React \
-Typesript \
-Tailwind CSS \
-Vercel and Netlify
+React 18, TypeScript, Tailwind CSS, React Router, and react-multi-carousel.
+Built with Create React App and deployed on Vercel.
 
-### Additioanl Packages used
+## Run it
 
-react-multi-carousel \
-react-router-dom
+```bash
+npm install
+npm start
+```
 
-## Todo
+## Next
 
-### Bugs
-
-None yet!
-
-### Improvments
-
-Add dropdown to featured shop \
-Move carousel buttons outside of the carousel \
-smoothing transtion of all drop downs \
-fix the duraation of the join the movment button \
-Move the 'Todo' out of here and into github issues
-
-### Feedback is alway welcome please write me at bassey.bd@gmail.com
+- Dropdowns on the featured shop
+- Carousel arrows outside the images
+- Smoother dropdown transitions
